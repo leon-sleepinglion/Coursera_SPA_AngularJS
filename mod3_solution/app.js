@@ -13,10 +13,12 @@ function NarrowItDownController(MenuSearchService){
   narrow.searchField = "";
 
   narrow.search = function(searchTerm){
-    narrow.message = "GG";
     MenuSearchService.getMatchedMenuItems(searchTerm);
     if(narrow.found.length == 0){
-      narrow.message = "Not found"
+      narrow.message = "Not found";
+    }
+    else{
+      narrow.message = "";
     }
   }
 
