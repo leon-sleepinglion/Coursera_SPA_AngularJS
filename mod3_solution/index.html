@@ -22,7 +22,7 @@
     <!-- found-items should be implemented as a component -->
     <div>
       <found-items items="narrow.found" on-remove="narrow.removeItem(index);"></found-items>
-      <p>{{narrow.message}}</p>
+      <p ng-if="narrow.checkEmpty();">Not found</p>
     </div>
   </div>
 

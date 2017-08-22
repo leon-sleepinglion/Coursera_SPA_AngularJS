@@ -18,7 +18,9 @@ function NarrowItDownController(MenuSearchService){
 
   narrow.found = MenuSearchService.getFoundItems();
 
-  narrow.message = MenuSearchService.getMessage();
+  narrow.checkEmpty = function(){
+    return narrow.found.length == 0;
+  };
 
   narrow.removeItem = function(itemIndex){
     MenuSearchService.removeItem(itemIndex);
@@ -31,21 +33,14 @@ function MenuSearchService($http){
 
   var foundItems = [];
 
-  var message = "";
-
   service.getFoundItems = function(){
     return foundItems;
   }
 
-  service.getMessage = function(){
-    return message;
-  }
-
   service.getMatchedMenuItems = function(searchTerm){
     foundItems.length = 0;
-    message = "";
+
     if(searchTerm.trim() == ""){ //if the search term is empty
-      message = "Nothing found";
       return foundItems;
     }
     var reg = new RegExp(searchTerm,"gi");
