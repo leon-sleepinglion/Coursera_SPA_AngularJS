@@ -13,14 +13,14 @@ function NarrowItDownController(MenuSearchService){
   narrow.searchField = "";
 
   narrow.search = function(searchTerm){
+    narrow.message = "GG";
     MenuSearchService.getMatchedMenuItems(searchTerm);
+    if(narrow.found.length == 0){
+      narrow.message = "Not found"
+    }
   }
 
   narrow.found = MenuSearchService.getFoundItems();
-
-  narrow.checkEmpty = function(){
-    return narrow.found.length == 0;
-  };
 
   narrow.removeItem = function(itemIndex){
     MenuSearchService.removeItem(itemIndex);
@@ -52,9 +52,6 @@ function MenuSearchService($http){
           if (reg.test(menu_item.name)){
             foundItems.push(menu_item);
           }
-        }
-        if(foundItems.length === 0){
-          message = "Nothing found";
         }
         return foundItems;
     });
