@@ -44,7 +44,7 @@ function MenuSearchService($http){
   service.getMatchedMenuItems = function(searchTerm){
     foundItems.length = 0;
     message = "";
-    if(searchTerm.trim().length === 0){ //if the search term is empty
+    if(searchTerm.trim() == ""){ //if the search term is empty
       message = "Nothing found"
       return foundItems;
     }
