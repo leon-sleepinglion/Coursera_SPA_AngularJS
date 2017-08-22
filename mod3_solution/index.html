@@ -16,7 +16,7 @@
       <input type="text" placeholder="search term" class="form-control" ng-model="narrow.searchField">
     </div>
     <div class="form-group narrow-button">
-      <button class="btn btn-primary" ng-click="narrow.search(narrow.searchField)">Narrow It Down For Me!</button>
+      <button class="btn btn-primary" ng-click="narrow.search(narrow.searchField);narrow.checkEmpty();">Narrow It Down For Me!</button>
     </div>
     <br />
     <!-- found-items should be implemented as a component -->

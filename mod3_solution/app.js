@@ -12,14 +12,15 @@ function NarrowItDownController(MenuSearchService){
 
   narrow.searchField = "";
 
+  narrow.message = "";
+
   narrow.search = function(searchTerm){
     MenuSearchService.getMatchedMenuItems(searchTerm);
-    if(narrow.found.length == 0){
-      narrow.message = "Not found";
-    }
-    else{
-      narrow.message = "";
-    }
+  }
+
+  narrow.checkEmpty = function(){
+    if(narrow.found.length == 0) narrow.message = "Not found";
+    else narrow.message = "";
   }
 
   narrow.found = MenuSearchService.getFoundItems();
