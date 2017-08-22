@@ -18,6 +18,8 @@ function NarrowItDownController(MenuSearchService){
 
   narrow.found = MenuSearchService.getFoundItems();
 
+  narrow.message = MenuSearchService.getMessage();
+
   narrow.removeItem = function(itemIndex){
     MenuSearchService.removeItem(itemIndex);
   }
@@ -29,12 +31,23 @@ function MenuSearchService($http){
 
   var foundItems = [];
 
+  var message = "";
+
   service.getFoundItems = function(){
     return foundItems;
   }
 
+  service.getMessage = function(){
+    return message;
+  }
+
   service.getMatchedMenuItems = function(searchTerm){
     foundItems.length = 0;
+    message = "";
+    if(searchTerm.trim().length === 0){ //if the search term is empty
+      message = "Nothing found"
+      return foundItems;
+    }
     var reg = new RegExp(searchTerm,"gi");
     return $http({
       method: "GET",
@@ -44,6 +57,9 @@ function MenuSearchService($http){
           if (reg.test(menu_item.name)){
             foundItems.push(menu_item);
           }
+        }
+        if(foundItems.length === 0){
+          message = "Nothing found";
         }
         return foundItems;
     });
