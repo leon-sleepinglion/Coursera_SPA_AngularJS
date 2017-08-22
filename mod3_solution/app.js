@@ -45,7 +45,7 @@ function MenuSearchService($http){
     foundItems.length = 0;
     message = "";
     if(searchTerm.trim() == ""){ //if the search term is empty
-      message = "Nothing found"
+      message = "Nothing found";
       return foundItems;
     }
     var reg = new RegExp(searchTerm,"gi");
