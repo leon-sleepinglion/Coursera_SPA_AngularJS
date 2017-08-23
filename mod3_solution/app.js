@@ -51,7 +51,7 @@ function MenuSearchService($http){
           return foundItems;
         }
         for (var menu_item of response.data.menu_items) {
-          if (reg.test(menu_item.name)){
+          if (reg.test(menu_item.description)){
             foundItems.push(menu_item);
           }
         }
