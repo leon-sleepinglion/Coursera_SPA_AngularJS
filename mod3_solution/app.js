@@ -48,16 +48,16 @@ function MenuSearchService($http){
 
   service.getMatchedMenuItems = function(searchTerm){
     foundItems.length = 0;
-    message = "";
-    if(searchTerm.trim() == ""){ //if the search term is empty
-      message = "Not found";
-      return foundItems;
-    }
     var reg = new RegExp(searchTerm,"gi");
     return $http({
       method: "GET",
       url: "https://davids-restaurant.herokuapp.com/menu_items.json"
     }).then(function(response){
+        message = "";
+        if(searchTerm.trim() == ""){ //if the search term is empty
+          message = "Not found";
+          return foundItems;
+        }
         for (var menu_item of response.data.menu_items) {
           if (reg.test(menu_item.name)){
             foundItems.push(menu_item);
