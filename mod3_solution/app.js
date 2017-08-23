@@ -16,11 +16,6 @@ function NarrowItDownController(MenuSearchService){
     MenuSearchService.getMatchedMenuItems(searchTerm);
   }
 
-  narrow.checkEmpty = function(){
-    if(narrow.found.length == 0) narrow.message = "Not found";
-    else narrow.message = "";
-  }
-
   narrow.found = MenuSearchService.getFoundItems();
 
   narrow.message = MenuSearchService.getMessage();
