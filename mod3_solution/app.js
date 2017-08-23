@@ -80,7 +80,8 @@ function foundItemsDirective(){
     templateUrl: "foundItems.html",
     scope: {
       items: "<",
-      onRemove: "&"
+      onRemove: "&",
+      message: "<"
     },
     controller: foundItemsDirectiveController,
     controllerAs: 'list',
