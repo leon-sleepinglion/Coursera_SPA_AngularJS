@@ -34,6 +34,7 @@ function MenuSearchService($http){
   var message = [""];
 
   service.getMessage = function(){
+    console.log("EZ");
     return message[0];
   }
 
