@@ -20,8 +20,6 @@ function NarrowItDownController(MenuSearchService){
 
   narrow.message = MenuSearchService.getMessage();
 
-  narrow.count = narrow.found.length;
-
   narrow.removeItem = function(itemIndex){
     MenuSearchService.removeItem(itemIndex);
   }
@@ -33,10 +31,10 @@ function MenuSearchService($http){
 
   var foundItems = [];
 
-  var message = "";
+  var message = [""];
 
   service.getMessage = function(){
-    return message;
+    return message[0];
   }
 
   service.getFoundItems = function(){
@@ -50,9 +48,9 @@ function MenuSearchService($http){
       method: "GET",
       url: "https://davids-restaurant.herokuapp.com/menu_items.json"
     }).then(function(response){
-        message = "";
+        message[0] = "";
         if(searchTerm.trim() == ""){ //if the search term is empty
-          message = "Not found";
+          message[0] = "Not found";
           return foundItems;
         }
         for (var menu_item of response.data.menu_items) {
@@ -61,7 +59,7 @@ function MenuSearchService($http){
           }
         }
         if(foundItems.length == 0){
-          message = "Not found";
+          message[0] = "Not found";
         }
         return foundItems;
     });
