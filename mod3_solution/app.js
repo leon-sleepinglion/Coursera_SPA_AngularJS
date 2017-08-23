@@ -20,6 +20,8 @@ function NarrowItDownController(MenuSearchService){
 
   narrow.message = MenuSearchService.getMessage();
 
+  narrow.count = narrow.found.length;
+
   narrow.removeItem = function(itemIndex){
     MenuSearchService.removeItem(itemIndex);
   }
