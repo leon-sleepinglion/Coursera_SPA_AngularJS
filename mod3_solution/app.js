@@ -47,9 +47,7 @@ function MenuSearchService($http){
       method: "GET",
       url: "https://davids-restaurant.herokuapp.com/menu_items.json"
     }).then(function(response){
-        // message[0] = "";
         if(searchTerm.trim() == ""){ //if the search term is empty
-          // message[0] = "Not found";
           return foundItems;
         }
         for (var menu_item of response.data.menu_items) {
@@ -57,9 +55,6 @@ function MenuSearchService($http){
             foundItems.push(menu_item);
           }
         }
-        // if(foundItems.length == 0){
-        //   message[0] = "Not found";
-        // }
         return foundItems;
     });
   }
