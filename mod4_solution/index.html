@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html lang="en" ng-app="MenuApp">
+<head>
+<title>Menu App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/anim-in-out.css">
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+
+<body>
+
+<h1>Menu App</h1>
+
+<div ui-view class="anim-in-out anim-zoom-out-full" data-anim-sync="true" data-anim-speed="500"></div>
+
+<!-- Libraries -->
+<script src="lib/angular.min.js"></script>
+<script src="lib/angular-ui-router.min.js"></script>
+<script src="lib/angular-animate.js"></script>
+<script src="lib/anim-in-out.js"></script>
+
+<!-- Module -->
+<script src="src/MenuApp.module.js"></script>
+<script src="src/data.module.js"></script>
+
+<!-- Routes -->
+<script src="src/routes.js"></script>
+
+<!-- MenuApp module artifacts -->
+<script src="src/Categories.controller.js"></script>
+<script src="src/Categories.component.js"></script>
+<script src="src/Items.controller.js"></script>
+<script src="src/Items.component.js"></script>
+
+<!-- Data module artifacts -->
+<script src="src/MenuData.service.js"></script>
+
+</body>
+</html>
