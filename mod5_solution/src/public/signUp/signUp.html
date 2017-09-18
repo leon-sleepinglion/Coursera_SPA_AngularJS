@@ -1,0 +1,16 @@
+<div class="container">
+<form novalidate name="signUpForm">
+	<label for="firstName">First Name: </label>
+	<input type="text" name="firstName" class="form-control" ng-model="signUp.firstName" required>
+	<label for="lastName">Last Name: </label>
+	<input type="text" name="lastName" class="form-control" ng-model="signUp.lastName" required>
+	<label for="email">Email Address: </label>
+	<input type="email" name="email" class="form-control" ng-model="signUp.email" required>
+	<label for="phone">Phone Number: </label>
+	<input type="text" name="phone" class="form-control" ng-model="signUp.phone" required>
+	<label for="menuNumber">Menu Number of favorite dish: </label>
+	<input type="text" name="menuNumber" class="form-control" ng-model="signUp.menuNumber" required>
+	<br>
+	<button ng-click="signUp.submit();" ng-disabled="signUpForm.$invalid" class="btn btn-primary">Submit</button>
+</form>
+</div>
