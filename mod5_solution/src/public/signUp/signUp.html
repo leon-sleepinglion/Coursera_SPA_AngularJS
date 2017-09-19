@@ -2,15 +2,22 @@
 <form novalidate name="signUpForm">
 	<label for="firstName">First Name: </label>
 	<input type="text" name="firstName" class="form-control" ng-model="signUp.firstName" required>
+	<p ng-if="signUpForm.firstName.$error.required && signUpForm.firstName.$touched">First name is required.</p>
 	<label for="lastName">Last Name: </label>
 	<input type="text" name="lastName" class="form-control" ng-model="signUp.lastName" required>
+	<p ng-if="signUpForm.lastName.$error.required && signUpForm.lastName.$touched">Last name is required.</p>
 	<label for="email">Email Address: </label>
 	<input type="email" name="email" class="form-control" ng-model="signUp.email" required>
+	<p ng-if="signUpForm.email.$touched && signUpForm.email.$invalid">Proper email address is required.</p>
 	<label for="phone">Phone Number: </label>
 	<input type="text" name="phone" class="form-control" ng-model="signUp.phone" required>
+	<p ng-if="signUpForm.phone.$error.required && signUpForm.phone.$touched">Phone number is required.</p>
 	<label for="menuNumber">Menu Number of favorite dish: </label>
 	<input type="text" name="menuNumber" class="form-control" ng-model="signUp.menuNumber" required>
+	<p ng-if="signUpForm.menuNumber.$error.required && signUpForm.menuNumber.$touched">Menu number is required.</p>
+	<p ng-if="signUp.notExist">No such menu item exists.</p>
 	<br>
 	<button ng-click="signUp.submit();" ng-disabled="signUpForm.$invalid" class="btn btn-primary">Submit</button>
 </form>
+	<p ng-if="signUp.saved"> Your information has been saved.</p>
 </div>

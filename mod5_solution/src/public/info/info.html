@@ -1,0 +1,17 @@
+<div class="container">
+
+<div ng-if="info.registered">
+	<p>First name: {{info.user.firstName}}</p>
+	<p>Last name: {{info.user.lastName}}</p>
+	<p>Email address: {{info.user.email}}</p>
+	<p>Phone Number: {{info.user.phone}}</p>
+	<p>Favorite Menu Item Name: {{info.user.itemName}}</p>
+	<p>Favorite Menu Item Description: {{info.user.itemDescription}}</p>
+	<img ng-src="{{info.user.itemImageURL}}">
+</div>
+
+<div ng-if="!info.registered">
+	<p>Not signed up yet. <a ui-sref="public.signUp">Sign up now!</a></p>	
+</div>
+
+</div>
