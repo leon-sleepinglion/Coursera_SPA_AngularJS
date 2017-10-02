@@ -1,4 +1,4 @@
-# Coursera_SPA_AngularJS
+# Coursera_SPA_AngularJS [COMPLETED]
 A repository for the submission of assignments of &lt;Single Page Applications with AngularJS>.
 
 In order to view/inspect the results of each module, use the URL as below:
