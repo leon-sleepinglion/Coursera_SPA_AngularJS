@@ -1,4 +1,4 @@
-# Coursera_SPA_AngularJS [COMPLETED]
+# [Coursera_SPA_AngularJS](https://www.coursera.org/learn/single-page-web-apps-with-angularjs) [COMPLETED]
 A repository for the submission of assignments of &lt;Single Page Applications with AngularJS>.
 
 In order to view/inspect the results of each module, use the URL as below:
